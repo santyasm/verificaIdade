@@ -2,7 +2,7 @@ function verificar(){
     const data = new Date()
     const anoAtual = data.getFullYear()
     const anoDeNascimento = document.getElementById("TextoAno")
-    let Resultado = document.getElementById("Resultado")
+    let resultado = document.getElementById("Resultado")
 
     if (anoDeNascimento.value.length == 0 || anoDeNascimento.value > anoAtual) {
         alert(`[ERRO] Verifique os dados e tente novamente! Lembre-se de que estamos em ${anoAtual} 😉`)
@@ -36,7 +36,7 @@ function verificar(){
                 img.src = "./imagens/idosa.png"
             }
         }
-        Resultado.style.textAlign = "center"
-        Resultado.innerHTML = `Detectamos ${genero} de ${idade} anos.`
+        resultado.style.textAlign = "center"
+        resultado.innerHTML = `Detectamos ${genero} de ${idade} anos.`
     }
 }
