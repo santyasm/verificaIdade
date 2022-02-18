@@ -1,17 +1,18 @@
 function verificar(){
-    var data = new Date()
-    var ano = data.getFullYear()
-    var fano = document.getElementById("txtano")
-    var res = document.getElementById("res")
+    const data = new Date()
+    const anoAtual = data.getFullYear()
+    const anoDeNascimento = document.getElementById("TextoAno")
+    let Resultado = document.getElementById("Resultado")
 
-    if (fano.value.length == 0 || fano.value > ano) {
-        alert("[ERRO] Verifique os dados e tente novamente!")
+    if (anoDeNascimento.value.length == 0 || anoDeNascimento.value > anoAtual) {
+        alert(`[ERRO] Verifique os dados e tente novamente! Lembre-se de que estamos em ${anoAtual} 😉`)
     } else {
-        var fsex = document.getElementsByName("radsex")
-        var idade = ano - Number(fano.value)
-        var genero = ""
-        var img = document.getElementById("foto")
-        if (fsex[0].checked) {
+        const opcaoDoSexo = document.getElementsByName("RadioSexo")
+        const idade = anoAtual - Number(anoDeNascimento.value)
+        let genero = ""
+        let img = document.getElementById("Foto")
+        
+        if (opcaoDoSexo[0].checked) {
             genero = "Homem"
             if (idade >= 0 && idade <= 12) {
                 img.src = "./imagens/bebe-boy.png"
@@ -20,21 +21,22 @@ function verificar(){
             } else if (idade < 55) {
                 img.src ="./imagens/man.png"
             } else {
-                img.src ="../imagens/idoso.png"
+                img.src ="./imagens/idoso.png"
             }
-            }else {
+
+        } else {
             genero = "Mulher"
             if (idade >= 0 && idade <= 12) {
                 img.src = "./imagens/bebe-girl.png"
-            } else if (idade < 23){
-                img.src ="../imagens/teen-girl.png"             
+            } else if (idade < 30){
+                img.src ="./imagens/teen-girl.png"             
             } else if (idade < 55) {
                 img.src ="./imagens/woman.png"
             } else {
                 img.src = "./imagens/idosa.png"
             }
         }
-        res.style.textAlign = "center"
-        res.innerHTML = `Detectamos ${genero} de ${idade} anos.`
+        Resultado.style.textAlign = "center"
+        Resultado.innerHTML = `Detectamos ${genero} de ${idade} anos.`
     }
 }
