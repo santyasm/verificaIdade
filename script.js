@@ -19,9 +19,9 @@ function verificar(){
             } else if (idade < 30){
                 img.src = "./imagens/teen-boy.png"               
             } else if (idade < 55) {
-                img.src ="./imagens/man.png"
+                img.src = "./imagens/man.png"
             } else {
-                img.src ="./imagens/idoso.png"
+                img.src = "./imagens/idoso.png"
             }
 
         } else {
@@ -29,9 +29,9 @@ function verificar(){
             if (idade >= 0 && idade <= 12) {
                 img.src = "./imagens/bebe-girl.png"
             } else if (idade < 30){
-                img.src ="./imagens/teen-girl.png"             
+                img.src = "./imagens/teen-girl.png"             
             } else if (idade < 55) {
-                img.src ="./imagens/woman.png"
+                img.src = "./imagens/woman.png"
             } else {
                 img.src = "./imagens/idosa.png"
             }
